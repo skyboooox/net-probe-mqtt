@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  net-probe-mqtt:
+    build: .
+    restart: unless-stopped
+    environment:
+      MQTT_HOST: "localhost"
+      MQTT_PORT: "1883"
+      MQTT_USERNAME: ""
+      MQTT_PASSWORD: ""
+      MQTT_TLS: "false"
+      PROBE_TARGETS: '[{"host":"223.5.5.5","id":"dns","name":"DNS延时"},{"host":"baidu.com","id":"china","name":"国内站点连通性"},{"host":"github.com","id":"github","name":"国际直连连通性"},{"host":"x.com","id":"global","name":"国际站点连通性"}]'
